@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import PageWrapper from "./components/PageWrapper";
+import Paginacion from "./components/Paginacion";
 import Pelicula from "./components/Pelicula";
 import PeliculaJson from "./peliculas.json";
 
 const App = () => {
+  const [paginaActual, setPaginaActual] = useState(1);
+  const tolaPorPagina = 4;
   let peliculas = PeliculaJson;
+  const cargarPeliculas = () => {
+    peliculas = peliculas.slice(
+      (paginaActual - 1) * tolaPorPagina,
+      paginaActual * tolaPorPagina
+    );
+  };
+
+  const getTotalPages = () => {
+    let cantidadTotalPeliculas = PeliculaJson.length;
+    return Math.ceil(cantidadTotalPeliculas / tolaPorPagina);
+  };
+  cargarPeliculas();
 
   return (
     <>
@@ -35,6 +50,13 @@ const App = () => {
             );
           }
         )}
+        <Paginacion
+          pagina={paginaActual}
+          total={getTotalPages()}
+          onChange={(pagina) => {
+            setPaginaActual(pagina);
+          }}
+        />
       </PageWrapper>
     </>
   );
