@@ -12,6 +12,7 @@ const Paginacion = ({ pagina, total, onChange }) => {
             onChange(pag);
           }}
           style={{ cursor: "pointer" }}
+          key={i}
         >
           {pag}
         </a>

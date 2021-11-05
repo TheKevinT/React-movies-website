@@ -16,10 +16,7 @@ const Pelicula = ({
         <img src={imagen} alt="" />
         <div className="mv-item-infor">
           <h6>
-            <a href="moviesingle.html">
-              {titulo}
-              <span>(2012)</span>
-            </a>
+            <a href="moviesingle.html">{titulo}</a>
           </h6>
           <p className="rate">
             <i className="ion-android-star" />
