@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const PageWrapper = ({ children }) => {
   return (
@@ -199,7 +200,7 @@ const PageWrapper = ({ children }) => {
                     </a>
                     <ul className="dropdown-menu level1">
                       <li>
-                        <a href="index-2.html">Home 01</a>
+                        <Link to="/">Home 01</Link>
                       </li>
                       <li>
                         <a href="homev2.html">Home 02</a>
@@ -288,7 +289,7 @@ const PageWrapper = ({ children }) => {
                         <a href="bloggrid.html">blog Grid</a>
                       </li>
                       <li className="it-last">
-                        <a href="blogdetail.html">blog Detail</a>
+                        <Link to="/blog">blog Detail</Link>
                       </li>
                     </ul>
                   </li>
